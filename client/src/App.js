@@ -118,7 +118,7 @@ function App() {
   return (
 
     <div className={styles.app}>
-      <h2>welcome folks!!</h2>
+      <h2>welcome folks!! This is clone for classroom</h2>
       <form className={styles.form} onSubmit={submit}>
         <div className={styles['form-input']}>
           <input
