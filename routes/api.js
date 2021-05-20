@@ -8,7 +8,7 @@ const BlogPost = require('../models/blogPost');
 
 //Routes
 router.get('/', (req, res) => {
-    BlogPost.find({})
+    BlogPost.find({ })
         .then((data) => {
             console.log('Data:', data);
             res.json(data);
@@ -28,7 +28,7 @@ router.post('/save', (req, res) => {
 
     newBlogPost.save((error) => {
         if (error) {
-            res.status().json({
+            res.status(500 ).json({
                 msg: 'Sorry, Interal Server errors'
             });
         } else {

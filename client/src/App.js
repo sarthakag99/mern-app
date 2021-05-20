@@ -36,10 +36,18 @@ function App() {
     axios.get('/api')
       .then((response) => {
         const data = response.data;
+
+        //<--------Reverse Array so latest post shows at top----------->
+        const reverseData = new Array;
+        for (let i = data.length - 1; i >= 0; i--) {
+          reverseData.push(data[i]);
+        }
+        //<--------END-------------->
+
         setState((previousData) => {
           return {
             ...previousData,
-            posts: data
+            posts: reverseData  //<-------originally posts:data but for reverse posts:reverseData----------->
           };
         });
 
